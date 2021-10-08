@@ -8,38 +8,6 @@ const inquirer = require("inquirer");
 //require markdown js file
 const generateMd = require("./utils/generateMarkdown");
 
-/*
-
-function getLicense(value) {
-  switch (value) {
-    case "agpl-3.0":
-      return "[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)";
-
-    case "GNU GPLv3":
-      return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
-
-    case "lgpl-3.0":
-      return "[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)";
-
-    case "apache-2.0":
-      return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
-
-    case "bsl-1.0":
-      return "[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)";
-
-    case "mit":
-      return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
-
-    case "mpl-2.0":
-      return "[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)";
-
-    default:
-        return ;
-  }
-}
-
-/*
-
 /* TODO: Create an array of questions for user input*/
 const questions = [
   /*Question for the title*/
@@ -53,7 +21,7 @@ const questions = [
   {
     type: "input",
     name: "description",
-    message: "Please enter a description of your project.",
+    message: "Please enter a breif description of the project.",
     validate: validateInput,
   },
 
@@ -63,7 +31,7 @@ const questions = [
     type: "input",
     name: "installation",
     message:
-      "Enter an explination of how to install the software, or commands for the program.",
+      "Please enter steps for installing this project",
     validate: validateInput,
   },
 
@@ -71,7 +39,7 @@ const questions = [
   {
     type: "input",
     name: "usage",
-    message: "How can this project/project be used.",
+    message: "What is the purpose of this project.",
     validate: validateInput,
   },
 
@@ -80,7 +48,7 @@ const questions = [
   {
     type: "list",
     name: "license",
-    message: "Select a license for this project",
+    message: "Select a license used for this project",
     choices: [
       "agpl-3.0",
       "gpl-3.0",
@@ -98,8 +66,14 @@ const questions = [
   {
     type: "input",
     name: "contributing",
-    message: "How can other users contribute to this project?",
+    message: "How can other contributers are there for this project?",
     validate: validateInput,
+  },
+
+  {
+    type: "input",
+    name: "tests",
+    message: "Is there a test included?",
   },
 
   //QUESTIONS SECTION
@@ -116,7 +90,7 @@ const questions = [
   {
     type: "input",
     name: "userEmail",
-    message: "GitHub email?",
+    message: "Email?",
   },
 ];
 
@@ -139,11 +113,9 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-  inquirer.prompt(questions)
-  .then((data) => {
+  inquirer.prompt(questions).then((data) => {
     console.log(JSON.stringify(data, null, " "));
     var nodeData = generateMd(data);
-    
     writeToFile("./example/README.md", nodeData);
   });
 }
