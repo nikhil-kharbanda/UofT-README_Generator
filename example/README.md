@@ -1,10 +1,9 @@
 
-<h1 align="center">README Generator </h1>
+<h1 align="center">UofT-PersonalPortfolioAttempt2 </h1>
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <br />
 
 ## Description
-  To automatically create a readme file in a more detailed format
+  This is my attempt 2 to make a new personal portfolio website
 
 ## Table of Contents
   - [Description](#description)
@@ -15,16 +14,16 @@
   - [Tests](#tests)  
 
 ## Installation
-  run program using node, enter the prompts
+  Just click the link, or go to https://nikhil-kharbanda.github.io/UofT-PersonalPortfolioAttempt2/
 
 ## Installation
-  the purpse of this project is to create a readme file with ease and more effiecently
+  Purpose of this project was to make a more polished personal portfolio webpage, while displaying extra information. Attached a resume, entered my certifs, etc so potential employeers can see all my information at any time.
 
 ## Contributing
-  n/a
+  nikhil-kharbanda
 
 ## Tests
-  Yes
+  No
 
 ## About the developer 
   nikhil-kharbanda <br >

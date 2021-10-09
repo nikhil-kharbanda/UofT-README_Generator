@@ -66,7 +66,7 @@ const questions = [
   {
     type: "input",
     name: "contributing",
-    message: "How can other contributers are there for this project?",
+    message: "How many other contributers are there for this project?",
     validate: validateInput,
   },
 
